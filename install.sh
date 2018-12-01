@@ -14,6 +14,7 @@ printf "
 #       Aplikasi ini hanya berlaku untuk Linux (Debian & Ubuntu)      #
 #######################################################################
 "
+dbrootpwd=`< /dev/urandom tr -dc A-Za-z0-9 | head -c8`
 # Melakukan validasi apakah root atau bukan yang login dan akan mengeksekusi script ini.
 [ $(id -u) != "0" ] && { echo "${CFAILURE}Error: Maaf, script ini hanya bisa dijalankan oleh super user (root)${CEND}"; exit 1; }
 printf "
@@ -22,7 +23,8 @@ Aplikasi yang akan di install :
     [*] MariaDB
     [*] PHP 7.2
 "
-read -e -p "Do you want to install Web server? [y/n]: " web_yn
-if [[ ! ${web_yn} =~ ^[y,n]$ ]]; then
+read -e -p "Apakah anda ingin tetap melanjutkannya ? [y/n]: " installasi
+if [[ ! ${installasi} =~ ^[y,n]$ ]]; then
     echo "${CWARNING}Error! masukan hanya 'y' atau 'n'${CEND}"
 fi
+echo dbrootpwd
