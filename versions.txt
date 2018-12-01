@@ -1,0 +1,114 @@
+# newest software version
+# Web
+nginx_ver=1.14.1
+tengine_ver=2.2.3
+openresty_ver=1.13.6.2
+openssl11_ver=1.1.1a
+openssl_ver=1.0.2q
+
+tomcat9_ver=9.0.13
+tomcat8_ver=8.5.35
+tomcat7_ver=7.0.92
+tomcat6_ver=6.0.53
+
+apache24_ver=2.4.37
+apache22_ver=2.2.34
+pcre_ver=8.42
+apr_ver=1.6.5
+apr_util_ver=1.6.1
+nghttp2_ver=1.34.0
+
+# DB
+mysql80_ver=8.0.13
+mysql57_ver=5.7.24
+mysql56_ver=5.6.42
+mysql55_ver=5.5.62
+
+mariadb103_ver=10.3.11
+mariadb102_ver=10.2.19
+mariadb101_ver=10.1.37
+mariadb100_ver=10.0.37
+mariadb55_ver=5.5.62
+
+percona57_ver=5.7.23-25
+percona56_ver=5.6.41-84.1
+percona55_ver=5.5.62-38.14
+
+alisql_ver=5.6.32-9
+
+pgsql_ver=11.1
+
+mongodb_ver=4.0.4
+
+# JDK
+jdk110_ver=11.0.1
+jdk18_ver=1.8.0_192
+jdk17_ver=1.7.0_80
+jdk16_ver=1.6.0_45
+
+# PHP
+php72_ver=7.2.12
+php71_ver=7.1.24
+php70_ver=7.0.32
+php56_ver=5.6.38
+php55_ver=5.5.38
+php54_ver=5.4.45
+php53_ver=5.3.29
+
+libiconv_ver=1.15
+curl_ver=7.62.0
+libmcrypt_ver=2.5.8
+mcrypt_ver=2.6.8
+mhash_ver=0.9.9.9
+libsodium_ver=1.0.16
+argon2_ver=20171227
+imagemagick_ver=6.9.10-14
+imagick_ver=3.4.3
+graphicsmagick_ver=1.3.30
+gmagick_for_php7_ver=2.0.5RC1
+gmagick_ver=1.1.7RC3
+zendopcache_ver=7.0.5
+xcache_ver=3.2.0
+apcu_ver=4.0.11
+apcu_for_php7_ver=5.1.12
+eaccelerator_ver=0.9.6.1
+phalcon_ver=3.4.1
+swoole_ver=4.2.6
+xdebug_ver=2.6.1
+
+# Ftp
+pureftpd_ver=1.0.47
+
+# Redis
+redis_ver=5.0.2
+pecl_redis_ver=4.2.0
+
+# Memcached
+memcached_ver=1.5.12
+libmemcached_ver=1.0.18
+pecl_memcached_ver=2.2.0
+pecl_memcached_php7_ver=3.0.4
+pecl_memcache_ver=3.0.8
+
+# MongoDB
+pecl_mongodb_ver=1.5.3
+pecl_mongo_ver=1.6.16
+
+# phpMyadmin
+phpmyadmin_ver=4.8.3
+phpmyadmin_oldver=4.4.15.10
+
+# jemalloc
+jemalloc_ver=5.1.0
+
+# boost
+boost_ver=1.67.0
+boost_oldver=1.59.0
+
+# Others
+libevent_ver=2.0.22-stable
+tmux_ver=2.8
+htop_ver=2.2.0
+bison_ver=2.7.1
+python_ver=3.6.7
+fail2ban_ver=0.10.4
