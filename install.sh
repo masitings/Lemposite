@@ -27,4 +27,8 @@ read -e -p "Apakah anda ingin tetap melanjutkannya ? [y/n]: " installasi
 if [[ ! ${installasi} =~ ^[y,n]$ ]]; then
     echo "${CWARNING}Error! masukan hanya 'y' atau 'n'${CEND}"
 fi
-echo ${dbrootpwd}
+case "${installasi}" in
+    y )
+    echo "Install nginx"
+        ;;
+esac
