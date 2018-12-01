@@ -19,6 +19,9 @@ dbrootpwd=`< /dev/urandom tr -dc A-Za-z0-9 | head -c8`
 [ $(id -u) != "0" ] && { echo "${CFAILURE}Error: Maaf, script ini hanya bisa dijalankan oleh super user (root)${CEND}"; exit 1; }
 
 lemposite_dir=$(dirname "`readlink -f $0`")
+pushd ${oneinstack_dir} > /dev/null
+. ./include/check_dir.sh
+
 
 printf "
 Aplikasi yang akan di install : 
