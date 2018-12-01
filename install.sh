@@ -29,10 +29,13 @@ Aplikasi yang akan di install :
     [*] MariaDB
     [*] PHP 7.2
 "
+
 read -e -p "Apakah anda ingin tetap melanjutkannya ? [y/n]: " installasi
+
 if [[ ! ${installasi} =~ ^[y,n]$ ]]; then
     echo "${CWARNING}Error! masukan hanya 'y' atau 'n'${CEND}"
 fi
+
 case "${installasi}" in
     y )
     . include/nginx.sh
