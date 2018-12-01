@@ -9,7 +9,7 @@
 clear
 printf "
 #######################################################################
-#       OneinStack for CentOS/RedHat 6+ Debian 7+ and Ubuntu 12+      #
+#                          LEMPOSITE WEBSERBER                        #
 #       For more information please visit https://oneinstack.com      #
 #######################################################################
 "
