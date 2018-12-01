@@ -2,7 +2,7 @@
 #
 #
 # GitHub:   https://github.com/masitings/Lemposite
-# Author:   Thamaraiselvam
+# Author:   Rafi Bagaskara Halilintar
 # URL:      https://rafi-halilintar.me
 #
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
@@ -20,8 +20,12 @@ dbrootpwd=`< /dev/urandom tr -dc A-Za-z0-9 | head -c8`
 
 lemposite_dir=$(dirname "`readlink -f $0`")
 pushd ${lemposite_dir} > /dev/null
+. ./options.conf
+. ./include/color.sh
+. ./include/check_os.sh
 . ./include/check_dir.sh
-
+. ./include/download.sh
+. ./include/get_char.sh
 
 printf "
 Aplikasi yang akan di install : 
