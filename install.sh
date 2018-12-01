@@ -22,3 +22,7 @@ Aplikasi yang akan di install :
     [*] MariaDB
     [*] PHP 7.2
 "
+read -e -p "Do you want to install Web server? [y/n]: " web_yn
+if [[ ! ${web_yn} =~ ^[y,n]$ ]]; then
+    echo "${CWARNING}Error! masukan hanya 'y' atau 'n'${CEND}"
+fi
