@@ -20,6 +20,7 @@ dbrootpwd=`< /dev/urandom tr -dc A-Za-z0-9 | head -c8`
 
 lemposite_dir=$(dirname "`readlink -f $0`")
 pushd ${lemposite_dir} > /dev/null
+. ./versions.txt
 . ./options.conf
 . ./include/color.sh
 . ./include/check_os.sh
