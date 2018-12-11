@@ -51,7 +51,55 @@ case "${installasi}" in
 	. ./include/check_download.sh
 	downloadDepsSrc=1
 	checkDownload 2>&1 | tee -a ${lemposite_dir}/install.log
-    # . include/nginx.sh
-    # Install_Nginx 2>&1 | tee -a ${oneinstack_dir}/install.log
-        # ;;
+
+	[ -e "/usr/local/bin/openssl" ] && rm -rf /usr/local/bin/openssl
+	[ -e "/usr/local/include/openssl" ] && rm -rf /usr/local/include/openssl
+	
+	. ./include/memory.sh
+
+    if [ ! -e ~/.lemposite ]; then
+	  # Check binary dependencies packages
+	  . ./include/check_sw.sh
+	  case "${OS}" in
+	    "CentOS")
+	      installDepsCentOS 2>&1 | tee ${lemposite_dir}/install.log
+	      . include/init_CentOS.sh 2>&1 | tee -a ${lemposite_dir}/install.log
+	      [ -n "$(gcc --version | head -n1 | grep '4\.1\.')" ] && export CC="gcc44" CXX="g++44"
+	      ;;
+	    "Debian")
+	      installDepsDebian 2>&1 | tee ${lemposite_dir}/install.log
+	      . include/init_Debian.sh 2>&1 | tee -a ${lemposite_dir}/install.log
+	      ;;
+	    "Ubuntu")
+	      installDepsUbuntu 2>&1 | tee ${lemposite_dir}/install.log
+	      . include/init_Ubuntu.sh 2>&1 | tee -a ${lemposite_dir}/install.log
+	      ;;
+	  esac
+	  # Install dependencies from source package
+	  installDepsBySrc 2>&1 | tee -a ${lemposite_dir}/install.log
+	fi
+
+	startTime=`date +%s`
+	# Install Jemalloc
+	. include/jemalloc.sh
+	Install_Jemalloc | tee -a ${lemposite_dir}/install.log
+	# Install OpenSSL
+	. ./include/openssl.sh
+	Install_openSSL | tee -a ${lemposite_dir}/install.log
+	# Install MariaDB
+	. include/mariadb-10.3.sh
+	Install_MariaDB103 2>&1 | tee -a ${lemposite_dir}/install.log
+	# Install Nginx
+    . include/nginx.sh
+    Install_Nginx 2>&1 | tee -a ${lemposite_dir}/install.log
+    # Install PHP72
+    . include/php-7.2.sh
+    Install_PHP72 2>&1 | tee -a ${lemposite_dir}/install.log
+    # Install PhpMyAdmin
+    . include/phpmyadmin.sh
+  	Install_phpMyAdmin 2>&1 | tee -a ${lemposite_dir}/install.log
+  	# Install Demo Index
+  	. include/demo.sh
+  	DEMO 2>&1 | tee -a ${oneinstack_dir}/install.log
+
 esac

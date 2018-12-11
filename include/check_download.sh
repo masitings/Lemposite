@@ -55,16 +55,19 @@ checkDownload() {
     echo "${CFAILURE}${FILE_NAME} download failed, Please contact the author! ${CEND}"
     kill -9 $$
   fi
+
   # Install PHP 7.2
-  echo "Install PHP 7.2.."
-  sudo apt-get install -y language-pack-en-base
-  export LANGUAGE=en_US.UTF-8
-  export LANG=en_US.UTF-8
-  export LC_ALL=en_US.UTF-8
-  sudo locale-gen en_US.UTF-8
-  sudo add-apt-repository ppa:ondrej/php
-  sudo apt-get update
-  sudo apt-get install -y php7.2-fpm php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-recode php7.2-tidy php7.2-dev php7.2-intl php7.2-snmp php7.2-curl php7.2-phpdbg php7.2-mbstring php7.2-zip php7.2-soap php7.2-xml
+  # echo "Install PHP 7.2.."
+  # sudo apt-get install -y language-pack-en-base
+  # export LANGUAGE=en_US.UTF-8
+  # export LANG=en_US.UTF-8
+  # export LC_ALL=en_US.UTF-8
+  # sudo locale-gen en_US.UTF-8
+  # sudo add-apt-repository ppa:ondrej/php
+  # sudo apt-get update
+  # sudo apt-get install -y php7.2-fpm php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-recode php7.2-tidy php7.2-dev php7.2-intl php7.2-snmp php7.2-curl php7.2-phpdbg php7.2-mbstring php7.2-zip php7.2-soap php7.2-xml
+  
+
   # Install Phpmyadmin
   echo "Download phpMyAdmin..."
   src_url=https://files.phpmyadmin.net/phpMyAdmin/${phpmyadmin_ver}/phpMyAdmin-${phpmyadmin_ver}-all-languages.tar.gz && Download_src
