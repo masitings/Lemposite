@@ -55,7 +55,6 @@ checkDownload() {
     echo "${CFAILURE}${FILE_NAME} download failed, Please contact the author! ${CEND}"
     kill -9 $$
   fi
-  ;;
   # Install PHP 7.2
   echo "Install PHP 7.2.."
   sudo apt-get install -y language-pack-en-base
