@@ -43,7 +43,15 @@ fi
 
 case "${installasi}" in
     y )
-    . include/nginx.sh
-    Install_Nginx 2>&1 | tee -a ${oneinstack_dir}/install.log
-        ;;
+
+	IPADDR=$(./include/get_ipaddr.py)
+	PUBLIC_IPADDR=$(./include/get_public_ipaddr.py)
+	IPADDR_COUNTRY=$(./include/get_ipaddr_state.py $PUBLIC_IPADDR)
+	
+	. ./include/check_download.sh
+	downloadDepsSrc=1
+	checkDownload 2>&1 | tee -a ${lemposite_dir}/install.log
+    # . include/nginx.sh
+    # Install_Nginx 2>&1 | tee -a ${oneinstack_dir}/install.log
+        # ;;
 esac
