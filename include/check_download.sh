@@ -23,7 +23,6 @@ checkDownload() {
   src_url=https://www.openssl.org/source/openssl-${openssl11_ver}.tar.gz && Download_src
   echo "Download nginx..."
   src_url=http://nginx.org/download/nginx-${nginx_ver}.tar.gz && Download_src
-  ;;  
   # Download Pcre
   echo "Download pcre..."
   src_url=https://ftp.pcre.org/pub/pcre/pcre-${pcre_ver}.tar.gz && Download_src
