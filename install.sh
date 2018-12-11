@@ -48,9 +48,9 @@ case "${installasi}" in
 	PUBLIC_IPADDR=$(./include/get_public_ipaddr.py)
 	IPADDR_COUNTRY=$(./include/get_ipaddr_state.py $PUBLIC_IPADDR)
 	
-	. ./include/check_download.sh
-	downloadDepsSrc=1
-	checkDownload 2>&1 | tee -a ${lemposite_dir}/install.log
+	# . ./include/check_download.sh
+	# downloadDepsSrc=1
+	# checkDownload 2>&1 | tee -a ${lemposite_dir}/install.log
 
 	[ -e "/usr/local/bin/openssl" ] && rm -rf /usr/local/bin/openssl
 	[ -e "/usr/local/include/openssl" ] && rm -rf /usr/local/include/openssl
@@ -81,8 +81,8 @@ case "${installasi}" in
 
 	startTime=`date +%s`
 	# Install Jemalloc
-	. include/jemalloc.sh
-	Install_Jemalloc | tee -a ${lemposite_dir}/install.log
+	# . include/jemalloc.sh
+	# Install_Jemalloc | tee -a ${lemposite_dir}/install.log
 	# Install OpenSSL
 	. ./include/openssl.sh
 	Install_openSSL | tee -a ${lemposite_dir}/install.log
